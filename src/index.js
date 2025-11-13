@@ -2,10 +2,12 @@ import "./style.css";
 import { getUserInput } from "./getUserInput";
 import { inputForm, searchButton } from "./relevantDomElements";
 import { getGeoData } from "./getGeoData";
+import { getWeatherData } from "./getWeatherData";
 
 inputForm.addEventListener("submit", (event) => {
   event.preventDefault();
 });
+
 searchButton.addEventListener("click", async function () {
   const userInput = getUserInput();
   if (userInput === "") {
@@ -18,7 +20,8 @@ searchButton.addEventListener("click", async function () {
         //maybe write the code to render "can't find location" here?
       } else {
         //call weather api and render result in here
-        console.log(geoData);
+        const weatherData = await getWeatherData(geoData);
+        console.log(weatherData);
       }
     } catch (error) {
       console.error(error);

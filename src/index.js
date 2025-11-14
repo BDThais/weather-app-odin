@@ -3,6 +3,7 @@ import { getUserInput } from "./getUserInput";
 import { inputForm, searchButton } from "./relevantDomElements";
 import { getGeoData } from "./getGeoData";
 import { getWeatherData } from "./getWeatherData";
+import { renderWeatherReport } from "./renderWeatherReport";
 
 inputForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -19,9 +20,8 @@ searchButton.addEventListener("click", async function () {
         alert("Invalid input");
         //maybe write the code to render "can't find location" here?
       } else {
-        //call weather api and render result in here
         const weatherData = await getWeatherData(geoData);
-        console.log(weatherData);
+        renderWeatherReport(geoData,weatherData);
       }
     } catch (error) {
       console.error(error);

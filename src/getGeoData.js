@@ -10,7 +10,9 @@ async function getGeoData(city) {
     } else {
       return jsonData[0];
     }
-  } catch (e) { console.error(e) }
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 export { getGeoData };

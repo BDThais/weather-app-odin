@@ -12,13 +12,12 @@ inputForm.addEventListener("submit", (event) => {
 searchButton.addEventListener("click", async function () {
   const userInput = getUserInput();
   if (userInput === "") {
-    //render "can't find the void :)"
+    alert("Can't find the void")
   } else {
     try {
       const geoData = await getGeoData(userInput);
       if (!geoData) {
         alert("Invalid input");
-        //maybe write the code to render "can't find location" here?
       } else {
         const weatherData = await getWeatherData(geoData);
         renderWeatherReport(geoData,weatherData);

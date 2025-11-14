@@ -12,7 +12,7 @@ inputForm.addEventListener("submit", (event) => {
 searchButton.addEventListener("click", async function () {
   const userInput = getUserInput();
   if (userInput === "") {
-    alert("Can't find the void")
+    alert("Can't find the void");
   } else {
     try {
       const geoData = await getGeoData(userInput);
@@ -20,7 +20,7 @@ searchButton.addEventListener("click", async function () {
         alert("Invalid input");
       } else {
         const weatherData = await getWeatherData(geoData);
-        renderWeatherReport(geoData,weatherData);
+        renderWeatherReport(geoData, weatherData);
       }
     } catch (error) {
       console.error(error);

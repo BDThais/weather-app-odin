@@ -7,4 +7,14 @@ const temperature = weatherReport.querySelector("#temperature");
 const weatherDesc = weatherReport.querySelector("#weather-description");
 const humidity = weatherReport.querySelector("#humidity");
 const feelLike = weatherReport.querySelector("#feel-like");
-export { cityInput, searchButton, inputForm, weatherReport, cityName, temperature, weatherDesc, humidity, feelLike };
+export {
+  cityInput,
+  searchButton,
+  inputForm,
+  weatherReport,
+  cityName,
+  temperature,
+  weatherDesc,
+  humidity,
+  feelLike,
+};

@@ -8,7 +8,7 @@ import {
 } from "./relevantDomElements";
 
 function renderWeatherReport(geoData, weatherData) {
-  cityName.textContent = `The City of ${geoData.name}`;
+  cityName.textContent = `${geoData.name}`;
   temperature.textContent = `Temperature: ${weatherData.main.temp}℃`;
   weatherDesc.textContent = `Weather: ${weatherData.weather[0].description}`;
   humidity.textContent = `Humidity: ${weatherData.main.humidity}%`;

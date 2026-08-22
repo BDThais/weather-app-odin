@@ -3,80 +3,161 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fffef4;
-    color: #333;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 40%, #fef3c7 100%);
+    color: #0f172a;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 32px 16px;
 }
+
 .rainbow-text {
   background: linear-gradient(
     to right,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
+    #f97316,
+    #facc15,
+    #22c55e,
+    #3b82f6,
+    #8b5cf6
   );
-  -webkit-background-clip: text; 
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  display: inline-block; 
+  display: inline-block;
 }
+
 h1 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 32px;
-    color: #1a1a1a;
+    margin-bottom: 28px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #0f172a;
     user-select: none;
+    letter-spacing: -0.04em;
 }
-#city-input {
-    padding: 10px;
-    font-size: 16px;
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-#search-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    margin-left: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-}
+
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 28px;
+    width: min(100%, 540px);
 }
-.weather-display {
+
+.search-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 12px;
+    width: 100%;
 }
+
+#city-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 420px);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    padding: 10px 12px;
+    backdrop-filter: blur(8px);
+}
+
+#city-input {
+    flex: 1;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: #0f172a;
+    outline: none;
+}
+
+#city-input::placeholder {
+    color: #64748b;
+}
+
+#search-button {
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#search-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35);
+}
+
+.status-message {
+    min-height: 24px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #fff7ed;
+    color: #9a5b00;
+    border: 1px solid #fdba74;
+    width: min(100%, 420px);
+}
+
+.status-message.error {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
+
+.weather-display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: min(100%, 420px);
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 24px;
+    padding: 28px 24px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+    backdrop-filter: blur(8px);
+}
+
 .weather-display p {
-    font-size: 18px;
-    margin: 5px 0;
+    font-size: 1.05rem;
+    margin: 8px 0;
+    color: #334155;
 }
+
 .hidden {
     display: none;
 }
-.weather-display {
-    background-color: #ffebd1;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+#city-name {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: 14px;
+    color: #0f172a;
+    font-weight: 800;
 }
-#city-name, #temperature ,#weather-description ,#humidity, #feel-like {
-    font-size: 28px;
-    margin: 10px 0;
+
+#temperature {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+#weather-description,
+#humidity,
+#feel-like {
+    font-size: 1.08rem;
+    color: #475569;
 }

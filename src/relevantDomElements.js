@@ -8,6 +8,10 @@ const temperature = weatherReport.querySelector("#temperature");
 const weatherDesc = weatherReport.querySelector("#weather-description");
 const humidity = weatherReport.querySelector("#humidity");
 const feelLike = weatherReport.querySelector("#feel-like");
+const weatherIcon = weatherReport.querySelector("#weather-icon");
+const windSpeed = weatherReport.querySelector("#wind-speed");
+const pressure = weatherReport.querySelector("#pressure");
+const visibility = weatherReport.querySelector("#visibility");
 export {
   cityInput,
   searchButton,
@@ -19,4 +23,8 @@ export {
   weatherDesc,
   humidity,
   feelLike,
+  weatherIcon,
+  windSpeed,
+  pressure,
+  visibility,
 };

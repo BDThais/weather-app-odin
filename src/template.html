@@ -6,7 +6,7 @@
     <title>Weather App</title>
 </head>
 <body>
-    <h1 class="main-title rainbow-text">Weather App Odin</h1>
+    <h1 class="main-title rainbow-text">Weather Forecast Odin</h1>
     <div class="main-container">
         <div class="search-form">
             <form id="city-form">
@@ -15,12 +15,38 @@
             </form>
             <div id="status-message" class="status-message hidden" role="alert" aria-live="polite"></div>
         </div>
-        <div class="weather-display hidden">
-            <h2 id="city-name"></h2>
-            <p id="temperature"></p>
-            <p id="weather-description"></p>
-            <p id="humidity"></p>
-            <p id="feel-like"></p>
+        <div class="weather-display hidden" aria-live="polite">
+            <div class="weather-atmosphere" aria-hidden="true"></div>
+            <div class="weather-header">
+                <div>
+                    <p class="eyebrow">CURRENT CONDITIONS</p>
+                    <h2 id="city-name"></h2>
+                    <p id="weather-description"></p>
+                </div>
+                <div class="weather-icon" id="weather-icon" aria-hidden="true"></div>
+            </div>
+            <div class="temperature-row">
+                <p id="temperature"></p>
+                <p id="feel-like"></p>
+            </div>
+            <div class="weather-metrics">
+                <div class="metric">
+                    <span class="metric-label">Humidity</span>
+                    <strong id="humidity"></strong>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Wind</span>
+                    <strong id="wind-speed"></strong>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Pressure</span>
+                    <strong id="pressure"></strong>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Visibility</span>
+                    <strong id="visibility"></strong>
+                </div>
+            </div>
         </div>
     </div>
 </body>
